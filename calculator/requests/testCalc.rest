@@ -1,0 +1,11 @@
+###
+POST http://localhost:8080/calculator
+Content-Type: application/json
+
+{
+  "name": "Canyon Super",
+  "price": 1500.00,
+  "leasingTime": 36
+}
+
+###

@@ -1,0 +1,32 @@
+micronaut:
+  application:
+    name: calculator
+    instance:
+      id: ${micronaut.application.name}:${random.shortuuid}
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+  server:
+    port: -1
+---
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
+---
+tracing:
+  jaeger:
+    enabled: true
+    sampler:
+      probability: 0.1
+---
+netty:
+  default:
+    allocator:
+      max-order: 3

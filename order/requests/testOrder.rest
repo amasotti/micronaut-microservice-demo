@@ -1,0 +1,21 @@
+POST http://localhost:8081/order
+Content-Type: application/json
+
+{
+  "name": "Canyon Super",
+  "price": 1999.99,
+  "leasingTime": 36
+}
+
+###
+
+POST http://localhost:8080/calculator
+Content-Type: application/json
+
+{
+  "name": "Canyon Super",
+  "price": 1999.99,
+  "leasingTime": 36
+}
+
+###
